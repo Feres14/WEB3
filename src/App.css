@@ -1,0 +1,99 @@
+/* src/App.css */
+
+/* Conteneur principal de l'application */
+.App.bna-theme {
+  text-align: center; /* Centre le texte par défaut DANS les enfants */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Organise header, main, footer verticalement */
+  /* L'image de fond est appliquée au body via index.css */
+}
+
+/* Style de l'en-tête */
+.app-header {
+  background-color: var(--bna-green); /* Utilise la variable de couleur */
+  color: var(--bna-text-light);
+  padding: 10px 25px; /* Moins de padding vertical, plus horizontal */
+  display: flex;
+  align-items: center; /* Centre verticalement les éléments (logo, titre) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère sous le header */
+  flex-shrink: 0; /* Empêche le header de rétrécir */
+  z-index: 10; /* S'assure qu'il est au-dessus du contenu */
+  position: relative; /* Nécessaire pour z-index */
+}
+
+.app-header .logo {
+    height: 45px; /* Ajustez selon la taille de votre logo */
+    margin-right: 15px; /* Espace entre le logo et le titre */
+    vertical-align: middle; /* Aide à l'alignement si besoin */
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 1.6em; /* Taille du titre principal */
+    font-weight: bold;
+}
+
+/* Zone de contenu principal */
+.app-main {
+  flex-grow: 1; /* Fait en sorte que le main prenne tout l'espace vertical restant */
+  padding: 30px;
+  /* --- Ajout pour centrer le contenu du main --- */
+  display: flex; /* Active Flexbox */
+  flex-direction: column; /* Empile les enfants verticalement */
+  justify-content: center; /* Centre verticalement */
+  align-items: center; /* Centre horizontalement */
+  /* --- Fond semi-transparent pour la lisibilité --- */
+  background-color: rgba(255, 255, 255, 0.9); /* Fond blanc légèrement transparent */
+  border-radius: 10px;
+  margin: 30px auto; /* Marge autour de la zone principale */
+  max-width: 1200px; /* Limite la largeur */
+  width: 90%; /* Utilise 90% de la largeur disponible */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre pour détacher du fond */
+  /* ---------------------------------------------- */
+}
+
+/* Style du pied de page */
+.app-footer {
+    background-color: #e9ecef; /* Un gris plus clair pour le footer */
+    color: var(--bna-text-dark);
+    padding: 20px; /* Plus de padding */
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 1px solid var(--bna-border-color); /* Ligne de séparation */
+    margin-top: auto; /* S'assure qu'il reste en bas si le contenu est court */
+    flex-shrink: 0; /* Ne rétrécit pas */
+    z-index: 10; /* Au-dessus de l'image de fond */
+    position: relative; /* Nécessaire pour z-index */
+}
+
+/* --- Styles pour les infos et icônes du Footer --- */
+.footer-contact-info {
+    margin-bottom: 15px; /* Espace avant les icônes */
+    font-weight: bold;
+    font-size: 1.1em; /* Un peu plus grand */
+}
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* Espace entre les icônes */
+    margin-bottom: 15px; /* Espace avant le copyright */
+}
+.social-link {
+    color: var(--bna-green); /* Couleur de l'icône */
+    font-size: 1.8em; /* Taille de l'icône */
+    transition: color 0.2s ease, transform 0.2s ease; /* Ajoute transition sur transform */
+    display: inline-block; /* Nécessaire pour transform */
+}
+.social-link:hover {
+    color: var(--bna-green-darker); /* Couleur au survol */
+    transform: scale(1.1); /* Légèrement plus grand au survol */
+}
+/* --- Fin Styles Footer --- */
+
+/* Classe pour les liens actifs dans la navigation (exemple) */
+.active-link {
+    font-weight: bold;
+    /* Ajoutez d'autres styles si besoin */
+}
